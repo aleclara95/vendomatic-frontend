@@ -1,0 +1,12 @@
+.coinSlot {
+  height: 128px;
+  width: 128px;
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+
+  span {
+    flex: 1;
+    align-self: center;
+  }
+}

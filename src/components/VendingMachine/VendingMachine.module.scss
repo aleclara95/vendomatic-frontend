@@ -1,0 +1,22 @@
+.vendingMachine {
+  display: flex;
+  width: 90%;
+  margin: auto;
+}
+
+.currentAmount {
+  margin-top: 32px;
+}
+
+.itemsDisplay {
+  flex: 3;
+  display: flex;
+  margin-top: 64px;
+}
+
+.vendingControls {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
