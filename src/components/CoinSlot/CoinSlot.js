@@ -1,12 +1,12 @@
 import React from 'react';
 
-import axios from 'axios';
+import axios from '../../axiosConfig';
 
 import styles from './CoinSlot.module.scss';
 
 function CoinSlot(props) {
   const addCoin = () => {
-    axios.put(`http://localhost:8000/api/v1/`, {
+    axios.put(``, {
       coin: 1
     })
     .then(res => {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import axios from 'axios';
+import axios from '../../axiosConfig';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -19,7 +19,7 @@ function VendingMachine(props) {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/v1/`)
+    axios.get(``)
       .then(res => {
         const coins = Number(res.headers['x-coins']);
         setCoins(coins);
@@ -29,7 +29,7 @@ function VendingMachine(props) {
         }
       );
 
-    axios.get(`http://localhost:8000/api/v1/inventory`)
+    axios.get(`inventory`)
       .then(res => {
         setItems(res.data);
       }).catch(
@@ -47,7 +47,7 @@ function VendingMachine(props) {
   };
 
   const refillItems = () => {
-    axios.post(`http://localhost:8000/api/v1/inventory/refill/`)
+    axios.post(`inventory/refill/`)
       .then(res => {
         setItems(res.data);
         toast.success(SUCCESS_MESSAGES['successful_refill']);
@@ -63,7 +63,7 @@ function VendingMachine(props) {
   return (
     <React.Fragment>
       <ToastContainer
-        position="top-center"
+        position="top-right"
         autoClose={2000}
         hideProgressBar={true}
         newestOnTop={false}

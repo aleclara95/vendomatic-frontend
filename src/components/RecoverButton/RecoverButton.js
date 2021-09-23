@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import axios from 'axios';
+import axios from '../../axiosConfig';
 import { toast } from 'react-toastify';
 
 import configData from '../../config.json';
@@ -14,7 +14,7 @@ function RecoverButton(props) {
 
   const dispenseCoins = () => {
     if (props.coinsCount) {
-      axios.delete(`http://localhost:8000/api/v1/`)
+      axios.delete(``)
       .then(res => {
         const newDispensedCoins = Number(res.headers['x-coins']);
         setDispensedCoins(newDispensedCoins);

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import axios from 'axios';
+import axios from '../../axiosConfig';
 import { toast } from 'react-toastify';
 
 import BuyButton from '../BuyButton/BuyButton';
@@ -12,7 +12,7 @@ import styles from './MachineItem.module.scss';
 
 function MachineItem(props) {
   const buyItem = () => {
-    axios.put(`http://localhost:8000/api/v1/inventory/${props.id}/`)
+    axios.put(`inventory/${props.id}/`)
       .then(res => {
         const coins = Number(res.headers['x-coins']);
         props.setCoins(0);

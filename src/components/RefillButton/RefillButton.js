@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
 
-import axios from 'axios';
-
 import styles from './RefillButton.module.scss';
 
 function RefillButton(props) {
